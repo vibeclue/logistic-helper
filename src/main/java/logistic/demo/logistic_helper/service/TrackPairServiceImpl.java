@@ -1,21 +1,22 @@
 package logistic.demo.logistic_helper.service;
 
-import logistic.demo.logistic_helper.dao.TrackPairRepository;
+import logistic.demo.logistic_helper.repository.TrackPairRepository;
 import logistic.demo.logistic_helper.model.TrackPair;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
+@AllArgsConstructor
 @Service
 public class TrackPairServiceImpl implements TrackPairService{
 
-    @Autowired
-    private TrackPairRepository trackPairRepository;
+    private final TrackPairRepository trackPairRepository;
 
-
+    @Cacheable(value = "trackPairs")
     @Override
     public List<TrackPair> getAllTrackPairs() {
         return trackPairRepository.findAll();
@@ -24,7 +25,7 @@ public class TrackPairServiceImpl implements TrackPairService{
     @Override
     public void createNewTrackPairOrUpdate(TrackPair trackPair) {
         if (trackPair.getDate() == null)
-            trackPair.setDate(LocalDateTime.now());
+            trackPair.setDate(LocalDate.now());
         trackPairRepository.save(trackPair);
     }
 

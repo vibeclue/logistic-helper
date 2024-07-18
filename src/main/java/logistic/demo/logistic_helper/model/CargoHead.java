@@ -1,7 +1,14 @@
 package logistic.demo.logistic_helper.model;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 
+@Getter
+@Setter
+@NoArgsConstructor
 @Entity
 @Table(name = "cargo_head")
 public class CargoHead {
@@ -14,26 +21,7 @@ public class CargoHead {
     private String headNumber;
 
 
-    public CargoHead() {
-    }
-
     public CargoHead(String headNumber) {
-        this.headNumber = headNumber;
-    }
-
-    public long getCargoHeadId() {
-        return cargoHeadId;
-    }
-
-    public void setCargoHeadId(long cargoHeadId) {
-        this.cargoHeadId = cargoHeadId;
-    }
-
-    public String getHeadNumber() {
-        return headNumber;
-    }
-
-    public void setHeadNumber(String headNumber) {
         this.headNumber = headNumber;
     }
 

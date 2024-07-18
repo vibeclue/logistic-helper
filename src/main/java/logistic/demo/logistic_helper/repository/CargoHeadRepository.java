@@ -1,4 +1,4 @@
-package logistic.demo.logistic_helper.dao;
+package logistic.demo.logistic_helper.repository;
 
 import logistic.demo.logistic_helper.model.CargoHead;
 import org.springframework.data.jpa.repository.JpaRepository;

@@ -2,9 +2,16 @@ package logistic.demo.logistic_helper.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
+@Getter
+@Setter
+@NoArgsConstructor
 @Entity
 @Table(name = "track_pair")
 public class TrackPair {
@@ -20,8 +27,8 @@ public class TrackPair {
     private String trailerNumber;
 
     @Column(name = "date", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd.MM.yyyy")
-    private LocalDateTime date;
+//    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd.MM.yyyy")
+    private LocalDate date;
 
     @Column(name = "from_country", length = 30)
     private String fromCountry;
@@ -35,75 +42,10 @@ public class TrackPair {
     @Column(name = "comment", length = 100)
     private String comment;
 
-    public TrackPair() {
-    }
 
     public TrackPair(String headNumber, String trailerNumber) {
         this.headNumber = headNumber;
         this.trailerNumber = trailerNumber;
     }
 
-    public long getTrackPairId() {
-        return trackPairId;
-    }
-
-    public void setTrackPairId(long trackPairId) {
-        this.trackPairId = trackPairId;
-    }
-
-    public String getHeadNumber() {
-        return headNumber;
-    }
-
-    public void setHeadNumber(String headNumber) {
-        this.headNumber = headNumber;
-    }
-
-    public String getTrailerNumber() {
-        return trailerNumber;
-    }
-
-    public void setTrailerNumber(String trailerNumber) {
-        this.trailerNumber = trailerNumber;
-    }
-
-    public LocalDateTime getDate() {
-        return date;
-    }
-
-    public void setDate(LocalDateTime date) {
-        this.date = date;
-    }
-
-    public String getFromCountry() {
-        return fromCountry;
-    }
-
-    public void setFromCountry(String fromCountry) {
-        this.fromCountry = fromCountry;
-    }
-
-    public String getToCountry() {
-        return toCountry;
-    }
-
-    public void setToCountry(String toCountry) {
-        this.toCountry = toCountry;
-    }
-
-    public String getCargo() {
-        return cargo;
-    }
-
-    public void setCargo(String cargo) {
-        this.cargo = cargo;
-    }
-
-    public String getComment() {
-        return comment;
-    }
-
-    public void setComment(String comment) {
-        this.comment = comment;
-    }
 }

@@ -6,10 +6,10 @@ import java.util.List;
 import java.util.Optional;
 
 public interface TrackPairService {
-    public List<TrackPair> getAllTrackPairs();
-    public void createNewTrackPairOrUpdate(TrackPair trackPair);
-    public void deleteTrackPair(long id);
-    public Optional<TrackPair> getTrackPairById(long id);
-    public List<TrackPair> getTrackPairsByHeadNumberPrefix(String prefix);
-    public List<TrackPair> getTrackPairsByTrailerNumberPrefix(String prefix);
+    List<TrackPair> getAllTrackPairs();
+    void createNewTrackPairOrUpdate(TrackPair trackPair);
+    void deleteTrackPair(long id);
+    Optional<TrackPair> getTrackPairById(long id);
+    List<TrackPair> getTrackPairsByHeadNumberPrefix(String prefix);
+    List<TrackPair> getTrackPairsByTrailerNumberPrefix(String prefix);
 }
