@@ -10,6 +10,7 @@ public interface TrackPairService {
     void createNewTrackPairOrUpdate(TrackPair trackPair);
     void deleteTrackPair(long id);
     Optional<TrackPair> getTrackPairById(long id);
-    List<TrackPair> getTrackPairsByHeadNumberPrefix(String prefix);
-    List<TrackPair> getTrackPairsByTrailerNumberPrefix(String prefix);
+//    List<TrackPair> getTrackPairsByHeadNumberPrefix(String prefix);
+//    List<TrackPair> getTrackPairsByTrailerNumberPrefix(String prefix);
+
 }

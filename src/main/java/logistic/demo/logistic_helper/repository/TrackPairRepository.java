@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface TrackPairRepository extends JpaRepository<TrackPair, Long> {
-    List<TrackPair> findByHeadNumberStartingWith(String prefix);
-    List<TrackPair> findByTrailerNumberStartingWith(String prefix);
+//    List<TrackPair> findByHeadNumberStartingWith(String prefix);
+//    List<TrackPair> findByTrailerNumberStartingWith(String prefix);
+    List<TrackPair> findAllByOrderByTrackPairIdDesc();
 }

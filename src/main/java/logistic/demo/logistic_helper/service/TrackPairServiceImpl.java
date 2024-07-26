@@ -16,10 +16,9 @@ public class TrackPairServiceImpl implements TrackPairService{
 
     private final TrackPairRepository trackPairRepository;
 
-    @Cacheable(value = "trackPairs")
     @Override
     public List<TrackPair> getAllTrackPairs() {
-        return trackPairRepository.findAll();
+        return trackPairRepository.findAllByOrderByTrackPairIdDesc();
     }
 
     @Override
@@ -39,13 +38,15 @@ public class TrackPairServiceImpl implements TrackPairService{
         return trackPairRepository.findById(id);
     }
 
-    @Override
-    public List<TrackPair> getTrackPairsByHeadNumberPrefix(String prefix) {
-        return trackPairRepository.findByHeadNumberStartingWith(prefix);
-    }
+//    @Override
+//    public List<TrackPair> getTrackPairsByHeadNumberPrefix(String prefix) {
+//        return trackPairRepository.findByHeadNumberStartingWith(prefix);
+//    }
+//
+//    @Override
+//    public List<TrackPair> getTrackPairsByTrailerNumberPrefix(String prefix) {
+//        return trackPairRepository.findByTrailerNumberStartingWith(prefix);
+//    }
 
-    @Override
-    public List<TrackPair> getTrackPairsByTrailerNumberPrefix(String prefix) {
-        return trackPairRepository.findByTrailerNumberStartingWith(prefix);
-    }
+
 }

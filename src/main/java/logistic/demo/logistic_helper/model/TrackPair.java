@@ -42,6 +42,9 @@ public class TrackPair {
     @Column(name = "comment", length = 100)
     private String comment;
 
+    @Column(name = "flag")
+    private Boolean flag = false;
+
 
     public TrackPair(String headNumber, String trailerNumber) {
         this.headNumber = headNumber;

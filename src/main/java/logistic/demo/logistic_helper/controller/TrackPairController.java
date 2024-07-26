@@ -45,14 +45,14 @@ public class TrackPairController {
     }
 
     ///track_pairs/head_number?prefix=ABC
-    @GetMapping("/head_number")
-    public List<TrackPair> getTrackPairsByHeadNumberPrefix(@RequestParam String prefix){
-        return trackPairService.getTrackPairsByHeadNumberPrefix(prefix);
-    }
-
-    @GetMapping("/trailer_number")
-    public List<TrackPair> getTrackPairsByTrailerNumberPrefix(@RequestParam String prefix){
-        return trackPairService.getTrackPairsByTrailerNumberPrefix(prefix);
-    }
+//    @GetMapping("/head_number")
+//    public List<TrackPair> getTrackPairsByHeadNumberPrefix(@RequestParam String prefix){
+//        return trackPairService.getTrackPairsByHeadNumberPrefix(prefix);
+//    }
+//
+//    @GetMapping("/trailer_number")
+//    public List<TrackPair> getTrackPairsByTrailerNumberPrefix(@RequestParam String prefix){
+//        return trackPairService.getTrackPairsByTrailerNumberPrefix(prefix);
+//    }
 
 }
